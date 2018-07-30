@@ -1,0 +1,38 @@
+#title{
+  text-align: center;
+  color: darkgrey;
+}
+.myclass{
+  color: white;
+  background-color: black;
+}
+h4{
+  font-size: 20px;
+}
+h4:before{
+  content: 'o';
+  background-color: black;
+  color: white;
+  
+}
+.flex-container {
+      display: flex;
+	}
+	.main {
+      flex-grow: 1;
+	    height: 30px;
+/* 	    background-color: red; */
+	}
+	.left {
+	    order: -1;
+	    flex: 0 1 200px;
+	    margin-right: 20px;
+	    height: 30px;
+/* 	    background-color: blue; */
+	}
+	.right {
+	    flex: 0 1 700px;
+      margin-left: 20px;
+	    height: 30px;
+/* 	    background-color: green; */
+	}
