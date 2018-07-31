@@ -29,16 +29,16 @@ h1{
   font-weight: 800;
   margin-bottom: 20px;
 }
-.pic {
-  float: right;
-  padding-right: 100px;
-}
+
 /* 设置个人信息和图片，两栏分布 */
 .person{
   float: left;
-  width: 400px;
+  width: 500px;
   height: 150px;  
-  
+}
+.pic {
+  float: right;
+  padding-right: 100px;
 }
 .info {
   line-height: 28px;
