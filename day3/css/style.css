@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+h1{
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.clearfix:after{
+  content: ""; 
+  display: block; 
+  height: 0; 
+  clear: both;   
+  }
+
+.clearfix {
+  /* 触发 hasLayout */ 
+  zoom: 1; 
+  }
+.name{
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.pic {
+  float: right;
+  padding-right: 100px;
+}
+/* 设置个人信息和图片，两栏分布 */
+.person{
+  float: left;
+  width: 400px;
+  height: 150px;  
+  
+}
+.info {
+  line-height: 28px;
+}
+/* .pic{
+  float: right;
+/*   width: 800px; */
+/*   height: 150px; */
+/* } */ 
+.myclass{
+  color: white;
+  background-color: black;
+  letter-spacing: 4px;
+}
+h4{
+  font-size: 20px;
+  background-color: lightgrey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4:before{
+  content: 'o ';
+  background-color: black;
+  color: white;
+  padding-left: 5px;
+}
+.flex-top {
+      display: flex;
+	}
+.flex-content{
+  margin-bottom: 10px;
+/*   border-bottom: 1px solid lightgrey; */
+  padding-bottom: 10px;
+}
+/* .flex-content:last-child {
+    border:none;
+    background-color: #f90;
+  } */
+.flex-content > p {
+  font-weight: 500;
+  margin-top: 10px;
+}
+.flex-content ul {
+  padding-left: 40px;
+}
+	.middle {
+      flex-grow: 1;
+	    height: 30px;
+	}
+	.left {
+	    order: -1;
+	    flex: 0 1 200px;
+	    margin-right: 20px;
+	    height: 30px;
+	}
+	.right {
+	    flex: 0 1 700px;
+      margin-left: 20px;
+	    height: 30px;
+	}
