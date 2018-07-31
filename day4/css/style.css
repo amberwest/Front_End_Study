@@ -8,6 +8,10 @@ body{
   background-repeat: repeat;
   background-position: center;
 }
+a.github:link{color: red;}
+a.github:visited {color: grey;}	/* 已被访问的链接 */
+a.github:hover {color: red;}	/* 鼠标指针移动到链接上 */
+a.github:active {color: #0000FF;}	/* 正在被点击的链接 */
 /*设置总体页面宽度1200px，margin上右下左依次为0, auto, 0, auto*/
 .container {
 	width: 1200px;
