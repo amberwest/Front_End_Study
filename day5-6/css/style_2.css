@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*简历左右两栏*/
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 700px;
+    display: flex;
+}
+
+.container-left {
+    flex-grow: 1;
+    background-color: dodgerblue;
+    color: white;
+    padding-top: 50px;
+    margin: 0 20px 20px 20px;
+}
+
+.container-right {
+    flex-grow: 2;
+}
+
+/*基本信息*/
+.flex-container {
+    display: flex;
+}
+
+.left, .right, .middle {
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    padding: 15px 10px 10px 0;
+}
+
+p {
+    word-spacing: 0.1em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.subtitle {
+    font-weight: bold;
+    display: block;
+}
