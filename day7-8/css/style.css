@@ -122,15 +122,17 @@ li {
 }
 
 /*设置tab-content*/
-.tab-first, .tab-second, .tab-third{
+.tab-first, .tab-second, .tab-third {
     display: flex;
     width: 960px;
     height: 180px;
     margin: 5px 0 -5px -5px;
 }
-.content-inner{
+
+.content-inner {
     flex: 1;
     line-height: 180px;
+    text-align: center;
     margin: 5px;
     border: 1px solid lightgrey;
 }
