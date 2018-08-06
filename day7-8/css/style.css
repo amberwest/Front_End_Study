@@ -52,7 +52,8 @@ html {
 .banner-inner {
     position: absolute;
     top: 260px;
-    left: 1020px;
+    left: calc(80% - 200px);
+    /*left: 1020px;*/
 }
 
 /*取消无序表的样式*/
