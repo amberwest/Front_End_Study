@@ -1,0 +1,235 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 1600px;
+    height: 6274px;
+    box-sizing: border-box;
+}
+
+/*设置背景图片*/
+.container {
+    background-image: url(../images/Background.png);
+    background-repeat: no-repeat;
+}
+
+/*第一版*/
+.first {
+    height: 990px;
+    text-align: center;
+}
+
+.welcome {
+    padding-top: 200px;
+}
+
+/*welcome设置为block，并设置文字样式*/
+.welcome span {
+    display: block;
+    width: 50%;
+}
+
+.welcome .title {
+    width: 1600px;
+    font-size: 62px;
+    padding-bottom: 72px;
+    color: white;
+}
+
+.welcome .subtitle {
+    margin: 0 auto;
+    width: 770px;
+    font-size: 20px;
+    line-height: 32px;
+    padding-bottom: 103px;
+    color: #848179
+}
+
+/*设置表单样式*/
+.signup {
+    padding: 50px 0 66px 0;
+    margin: 0 250px;
+    border: 1px solid #6c736f;
+}
+
+.signup .signup-words span {
+    display: block;
+}
+
+/*表单上部分*/
+.signup-1 {
+    font-size: 16px;
+    line-height: 28px;
+    color: #bfbebd;
+}
+
+.signup-2 {
+    font-size: 12px;
+    color: #6c736f;
+    margin-bottom: 47px;
+}
+
+/*真正的额表单部分*/
+form input {
+    /*设置input框背景色为透明*/
+    background-color: transparent;
+    -moz-appearance: none;
+    border-radius: 4px;
+    height: 48px;
+    width: 290px;
+    margin: 0 15px;
+    border: 1px solid #6c736f;
+}
+
+/*设置输入框内提示语样式*/
+form input::placeholder {
+    padding-left: 20px;
+}
+
+#email::placeholder {
+    color: #bfbebd;
+}
+
+/*设置按钮*/
+.signup-button {
+    margin-left: 15px;
+    height: 50px;
+    width: 126px;
+    border-radius: 4px;
+    border: 1px solid #6c736f;
+
+}
+
+/*设置第二版*/
+.second {
+    height: 712px;
+}
+
+.upper {
+    margin: 88px auto;
+    text-align: center;
+}
+
+/*描述语*/
+.upper-line {
+    font-size: 42px;
+    line-height: 52px;
+    color: #141414;
+    margin: 44px 450px 0 450px;
+}
+
+.lower {
+    display: flex;
+    margin: 0 285px;
+}
+
+.lower ul {
+    flex: 1;
+}
+
+.lower ul li {
+    display: flex;
+    padding-bottom: 88px;
+}
+
+.lower ul li p {
+    flex: 1;
+    width: 363px;
+    padding-left: 20px;
+}
+
+.clearfix .info .title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 25px;
+}
+
+/*设置第三版*/
+.third {
+    overflow: hidden;
+    height: 784px;
+    background-image: url(../images/Background-2.png);
+    background-repeat: no-repeat;
+}
+
+.third .left {
+    float: left;
+    margin-top: 166px;
+    margin-bottom: 182px;
+    padding-left: 313px;
+}
+
+.left-info .title {
+    width: 370px;
+    height: 141px;
+    color: white;
+    font-size: 40px;
+    line-height: 52px;
+    padding-bottom: 52px;
+}
+
+.left-info .subtitle {
+    width: 370px;
+    color: #c8c9c1;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 52px;
+}
+
+.button-field input {
+    height: 60px;
+    width: 240px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #6c736f;
+}
+
+.button-field .product {
+    margin-left: 32px;
+    background-color: transparent;
+}
+
+.button-field .product::placeholder {
+    color: white;
+}
+
+.third .right {
+    float: right;
+    margin-right: 0;
+}
+
+/*ipad外框*/
+.third .right .right-outer {
+    width: 604px;
+    height: 600px;
+    margin-top: 80px;
+    margin-bottom: 96px;
+    border: 1px solid #6c736f;
+    border-radius: 30px 0 0 30px;
+}
+
+/*圆圈*/
+.third .right .right-outer .circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: 298px 23px;
+    border: 1px solid #6c736f;
+    border-radius: 50%;
+}
+
+/*iPad内框*/
+.third .right .right-outer .right-inner {
+    width: 585px;
+    height: 538px;
+    margin: 30px 0 30px 60px;
+    border: 1px solid #6c736f;
+}
+
+.third .right img {
+    width: 578px;
+    height: 538px;
+}
