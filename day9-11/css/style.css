@@ -1,18 +1,20 @@
 * {
     padding: 0;
     margin: 0;
-}
-
-body {
-    width: 1600px;
-    height: 6274px;
     box-sizing: border-box;
 }
 
 /*设置背景图片*/
 .container {
+    width: 1600px;
+    /*height: 6274px;*/
     background-image: url(../images/Background.png);
     background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.container > div {
+    border-bottom: 1px solid #6c736f;
 }
 
 /*第一版*/
@@ -107,34 +109,34 @@ form input::placeholder {
     height: 712px;
 }
 
-.upper {
+.second .upper {
     margin: 88px auto;
     text-align: center;
 }
 
 /*描述语*/
-.upper-line {
+.second .upper-line {
     font-size: 42px;
     line-height: 52px;
     color: #141414;
     margin: 44px 450px 0 450px;
 }
 
-.lower {
+.second .lower {
     display: flex;
     margin: 0 285px;
 }
 
-.lower ul {
+.second .lower ul {
     flex: 1;
 }
 
-.lower ul li {
+.second .lower ul li {
     display: flex;
     padding-bottom: 88px;
 }
 
-.lower ul li p {
+.second .lower ul li p {
     flex: 1;
     width: 363px;
     padding-left: 20px;
@@ -232,4 +234,103 @@ form input::placeholder {
 .third .right img {
     width: 578px;
     height: 538px;
+}
+
+/*第四版页面*/
+.fourth {
+    margin: 0 auto;
+}
+
+.try-awesome {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 42px;
+    line-height: 52px;
+}
+
+.fourth .details {
+    display: flex;
+    margin-left: 280px;
+    margin-right: 230px;
+}
+
+.fourth .details div p:first-child {
+    padding-bottom: 40px;
+}
+
+.fourth .details div {
+    flex: 1;
+    text-align: center;
+    margin: 80px 42px;
+}
+
+/*第五版页面*/
+/*.fifth {*/
+/*border-bottom: 1px solid #6c736f;*/
+/*}*/
+
+.fifth .upper {
+    display: flex;
+    margin: 117px 315px 80px 315px;
+}
+
+.fifth .lower {
+    display: flex;
+    margin: 0 315px 106px 315px;
+}
+
+.fifth .pic img {
+    height: 350px;
+    width: 570px;
+}
+
+.fifth .upper .pic {
+    margin-right: 80px;
+}
+
+.fifth .lower .pic {
+    margin-left: 80px;
+}
+
+.fifth .detail .title {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-bottom: 33px;
+}
+
+.fifth .detail .info {
+    font-size: 16px;
+    line-height: 28px;
+    color: #acacac;
+}
+
+/*第六版页面*/
+/*.sixth {*/
+/*border-bottom: 1px solid #6c736f;*/
+/*}*/
+
+.sixth .upper {
+    text-align: center;
+    width: 700px;
+    margin: 100px 450px 66px 450px;
+}
+
+.sixth .upper .title{
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 30px;
+}
+.sixth .upper .info{
+    font-size: 18px;
+    line-height: 28px;
+}
+.list-items ul{
+    margin: 0 280px 70px 310px;
+}
+
+.list-items ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 30px 30px 0;
 }
