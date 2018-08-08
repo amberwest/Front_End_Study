@@ -316,21 +316,94 @@ form input::placeholder {
     margin: 100px 450px 66px 450px;
 }
 
-.sixth .upper .title{
+.sixth .upper .title {
     font-size: 42px;
     line-height: 52px;
     margin-bottom: 30px;
 }
-.sixth .upper .info{
+
+.sixth .upper .info {
     font-size: 18px;
     line-height: 28px;
+    color: #acacac;
 }
-.list-items ul{
+
+.list-items ul {
     margin: 0 280px 70px 310px;
 }
 
-.list-items ul li{
+.list-items ul li {
     display: inline-block;
     list-style-type: none;
     margin: 0 30px 30px 0;
 }
+
+/*第七版页面*/
+.seventh {
+    display: flex;
+}
+
+.seventh .left {
+    width: 470px;
+    margin: 70px 45px 70px 315px;
+    padding: 0 50px 30px 50px;
+    text-align: center;
+    border: 1px solid #6c736f;
+    border-radius: 4px;
+}
+.seventh .left p{
+    width: 370px;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 40px auto;
+}
+/*输入框*/
+.E-mail, .Subject, .Message, .send{
+    width: 370px;
+    display: block;
+    margin-bottom: 30px;
+    border: 1px solid #6c736f;
+    border-radius: 2px;
+}
+.E-mail, .Subject, .send{
+    height: 50px;
+}
+.Message{
+    height: 142px;
+}
+.send{
+    color: white;
+    background-color: black;
+}
+.Message::placeholder, .Subject::placeholder, .E-mail::placeholder{
+    padding-left: 20px;
+    padding-top: 22px;
+    color: #6c736f;
+}
+
+.seventh .right {
+    width: 370px;
+    height: 350px;
+    margin: auto 310px auto 100px;
+}
+.seventh .right div .title{
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: bold;
+}
+.seventh .right div .info{
+    font-size: 16px;
+    line-height: 26px;
+    color: #6c736f;
+    margin: 45px 0 35px 0;
+}
+.seventh .right .pic{
+display: flex;
+    margin-top: 40px;
+}
+.seventh .right .pic .detail{
+    margin-left: 20px;
+}
+
+/*footer*/
