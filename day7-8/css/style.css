@@ -131,6 +131,7 @@ li {
 
 .content-inner {
     flex: 1;
+    /*水平垂直居中*/
     line-height: 180px;
     text-align: center;
     margin: 5px;
