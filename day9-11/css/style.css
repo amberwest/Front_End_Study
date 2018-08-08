@@ -351,32 +351,38 @@ form input::placeholder {
     border: 1px solid #6c736f;
     border-radius: 4px;
 }
-.seventh .left p{
+
+.seventh .left p {
     width: 370px;
     font-size: 16px;
     line-height: 32px;
     font-weight: bold;
     margin: 40px auto;
 }
+
 /*输入框*/
-.E-mail, .Subject, .Message, .send{
+.E-mail, .Subject, .Message, .send {
     width: 370px;
     display: block;
     margin-bottom: 30px;
     border: 1px solid #6c736f;
     border-radius: 2px;
 }
-.E-mail, .Subject, .send{
+
+.E-mail, .Subject, .send {
     height: 50px;
 }
-.Message{
+
+.Message {
     height: 142px;
 }
-.send{
+
+.send {
     color: white;
     background-color: black;
 }
-.Message::placeholder, .Subject::placeholder, .E-mail::placeholder{
+
+.Message::placeholder, .Subject::placeholder, .E-mail::placeholder {
     padding-left: 20px;
     padding-top: 22px;
     color: #6c736f;
@@ -387,23 +393,46 @@ form input::placeholder {
     height: 350px;
     margin: auto 310px auto 100px;
 }
-.seventh .right div .title{
+
+.seventh .right div .title {
     font-size: 42px;
     line-height: 52px;
     font-weight: bold;
 }
-.seventh .right div .info{
+
+.seventh .right div .info {
     font-size: 16px;
     line-height: 26px;
     color: #6c736f;
     margin: 45px 0 35px 0;
 }
-.seventh .right .pic{
-display: flex;
+
+.seventh .right .pic {
+    display: flex;
     margin-top: 40px;
 }
-.seventh .right .pic .detail{
+
+.seventh .right .pic .detail {
     margin-left: 20px;
 }
 
 /*footer*/
+.footer {
+    background-color: black;
+}
+
+.footer .inner {
+    padding: 80px 215px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .inner p.detail {
+    color: white;
+}
+
+.footer .inner p {
+    width: 270px;
+    margin-bottom: 30px;
+    color: #6c736f;
+}
