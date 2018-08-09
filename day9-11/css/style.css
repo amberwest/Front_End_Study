@@ -13,6 +13,11 @@
     margin: 0 auto;
 }
 
+/*统一设置字体颜色*/
+p.subtitle {
+    color: #848179;
+}
+
 .container > div {
     border-bottom: 1px solid #6c736f;
 }
@@ -171,6 +176,7 @@ form input::placeholder {
     font-size: 40px;
     line-height: 52px;
     padding-bottom: 52px;
+    margin-bottom: 50px;
 }
 
 .left-info .subtitle {
@@ -302,7 +308,6 @@ form input::placeholder {
 .fifth .detail .info {
     font-size: 16px;
     line-height: 28px;
-    color: #acacac;
 }
 
 /*第六版页面*/
@@ -325,7 +330,6 @@ form input::placeholder {
 .sixth .upper .info {
     font-size: 18px;
     line-height: 28px;
-    color: #acacac;
 }
 
 .list-items ul {
@@ -337,6 +341,7 @@ form input::placeholder {
     list-style-type: none;
     margin: 0 30px 30px 0;
 }
+
 /*设置整个over类的相关信息*/
 .over {
     width: 470px;
@@ -347,6 +352,7 @@ form input::placeholder {
     display: none;
     z-index: 9;
 }
+
 /*设置成员的名字及专业*/
 .over .user .name {
     padding-top: 90px;
@@ -363,6 +369,7 @@ form input::placeholder {
     color: lightgrey;
     margin-bottom: 20px;
 }
+
 /*设置链接大小及边框*/
 .over .content a {
     width: 50px;
@@ -372,6 +379,7 @@ form input::placeholder {
     border-radius: 50%;
     margin: 10px;
 }
+
 /*设置社交图片统一大小*/
 .over .content a img {
     height: 20px;
@@ -396,7 +404,7 @@ form input::placeholder {
     /*修改鼠标样式*/
     cursor: pointer;
     /*设置图片变暗/透明*/
-    -moz-opacity:0.6;
+    -moz-opacity: 0.6;
     opacity: 0.6;
 }
 
@@ -465,7 +473,6 @@ form input::placeholder {
 .seventh .right div .info {
     font-size: 16px;
     line-height: 26px;
-    color: #6c736f;
     margin: 45px 0 35px 0;
 }
 
@@ -496,5 +503,4 @@ form input::placeholder {
 .footer .inner p {
     width: 270px;
     margin-bottom: 30px;
-    color: #6c736f;
 }
