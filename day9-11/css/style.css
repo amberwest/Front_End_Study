@@ -370,20 +370,35 @@ form input::placeholder {
     margin-bottom: 20px;
 }
 
-/*设置链接大小及边框*/
-.over .content a {
+/*设置图片边框*/
+.over .pic .content {
+    display: inline-block;
+    position: relative;
     width: 50px;
     height: 50px;
-    padding: 13px;
+    margin-left: 15px;
     border: 1px solid #acacac;
     border-radius: 50%;
-    margin: 10px;
 }
 
-/*设置社交图片统一大小*/
-.over .content a img {
+.over .pic .content .out {
+    position: absolute;
+    /*这里的left取38%是因为整个盒子是长方形的，都取50%并不会在框内的正中间*/
+    left: 38%;
+    top: 50%;
+}
+
+/*设置图片的大小*/
+.over .pic .content .out .in a img {
     height: 20px;
     width: 20px;
+}
+
+/*设置图片外边距，也就是离圆圈的距离*/
+.over .pic .content .out .in {
+    /*这里的百分比跟父盒子的占比一样*/
+    margin-left: -38%;
+    margin-top: -50%;
 }
 
 /*.类over是要覆盖住图片的，所以父元素为relative
