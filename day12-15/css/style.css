@@ -82,27 +82,48 @@
     background-color: #222c3c;
 }
 
-.left .menu-list div {
+.left .list .menu-list {
     padding: 0 30px;
 }
 
-.left .menu-list .header {
-    overflow: hidden;
+/*设置字体*/
+.left .menu-list .header span {
     color: #475364;
-    border-top: 1px solid #2a3443;
 }
 
-.left .menu-list p {
+/*设置板块之间的横线*/
+.left .menu-list > div {
+    border-top: 1px solid #2a3547;
+}
+
+.menu-lr:last-child, .products-lr:last-child {
+    padding-bottom: 25px;
+}
+
+/*设置选项字体*/
+.left .menu-list span {
+    display: inline-block;
     font-size: 12px;
     line-height: 18px;
     color: #b7c0cd;
     padding: 25px 0 0 0;
 }
 
-.left .menu-list div p:last-child {
-    padding-bottom: 25px;
+/*左右对齐*/
+.left .menu-list .menu-lr, .left .menu-list .dashboard-lr, .left .menu-list .products-lr {
+    overflow: hidden;
 }
-.left .menu-list .products .tag{
+
+.left .menu-list .l {
+    float: left;
+}
+
+.left .menu-list .r {
+    float: right;
+}
+
+/*products图片跟字段的间距*/
+.left .menu-list .products .tag {
     padding-right: 10px;
 }
 
@@ -112,7 +133,8 @@
 }
 
 .left .list .goal {
+    width: 190px;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 20px;
+    left: 25px;
 }
