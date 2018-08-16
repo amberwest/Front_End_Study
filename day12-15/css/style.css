@@ -92,10 +92,9 @@ body {
     text-decoration: none;
 }
 
-/*overflow，清楚浮动，因为li左右两边浮动*/
+/*overflow，清除浮动，因为li左右两边浮动*/
 .menu-list .inner li {
     overflow: hidden;
-    line-height: 36px;
     font-size: 14px;
 }
 
@@ -104,9 +103,16 @@ body {
     color: #b7c0cd;
 }
 
+.menu-list .inner li {
+    padding-top: 20px;
+}
+
+.menu-list .inner li.last {
+    padding-bottom: 18px;
+}
+
 .menu-list .inner li.first {
     font-size: 12px;
-    line-height: 40px;
 }
 
 /*设置每个块第一行的字体样式*/
@@ -118,11 +124,29 @@ body {
     float: left;
 }
 
+/*列表的设置按钮*/
+.menu-list .inner li .setting {
+    float: right;
+}
+
+/*列表各项的消息提醒*/
 .menu-list .inner li .msg {
     float: right;
-    line-height: 40px;
+    background-color: #289cf4;
+    color: #ffffff;
+    border-radius: 40%;
+    padding: 0 4px;
 }
-.menu-list .inner li .active{
+
+.menu-list .inner li .error {
+    float: right;
+    background-color: red;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 0 8px;
+}
+
+.menu-list .inner li .active {
     color: #ffffff;
 }
 
@@ -136,22 +160,115 @@ body {
 }
 
 /*goal底部固定*/
-.menu-list .inner .goal{
+.menu-list .inner .goal {
     position: absolute;
     left: 30px;
     bottom: 10px;
 }
-.menu-list .inner .goal ul{
+
+.menu-list .inner .goal ul {
     border: none;
 }
 
-.menu-list .inner .goal ul .title{
+.menu-list .inner .goal ul .title {
     padding-right: 20px;
 }
-.menu-list .inner .goal .bar{
+
+.menu-list .inner .goal .bar {
     display: block;
     height: 0;
     width: 190px;
     border: 3px solid #2d3848;
     border-radius: 10px;
+}
+
+/*右边*/
+/*自适应宽度*/
+.right-part {
+    width: calc(100% - 350px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 350px;
+}
+
+.right-part .header {
+    overflow: hidden;
+    height: 80px;
+    border-bottom: 1px solid #e6e9ec;
+    position: relative;
+}
+
+.right-part .header .msg {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+/*用户头像、姓名等都固定在左上角，并用flex将盒子都横向排列*/
+.right-part .header .user {
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.right-part .header .user p.name {
+    color: #00aaff;
+}
+
+/*设置下拉按钮*/
+.right-part .header .user .xl a {
+    display: inline-block;
+    padding: 15px;
+}
+
+/*搜索框及好友列表*/
+.right-part .content .left {
+    width: 400px;
+    height: calc(100% - 80px);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    border-right: 1px solid #e6e9ec;
+}
+
+.right-part .content .friends {
+    padding: 0 30px;
+}
+
+.right-part .content .banner {
+    border-bottom: 1px solid #e6e9ec;
+}
+
+/*设置输入框*/
+.right-part .content .banner input {
+    position: relative;
+    width: 338px;
+    height: 32px;
+    border: 1px solid #e6e9ec;
+    border-radius: 4px;
+}
+
+/*放大镜位置*/
+.right-part .content .banner .zoom {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+}
+
+/*设置搜索框内字体样式*/
+.right-part .content .banner input::placeholder {
+    color: #e6e9ec;
+    font-size: 14px;
+    padding: 12px 15px;
+}
+
+.right-part .content .banner form {
+    padding: 18px 0;
+}
+
+.right-part .content .friends .friends-list ul {
+    list-style: none;
 }
