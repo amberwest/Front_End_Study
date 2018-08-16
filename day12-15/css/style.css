@@ -40,6 +40,7 @@ body {
     border: 1px solid #2d3848;
     border-radius: 50%;
 }
+
 /*最后一个圆圈也是按钮来的，中间的➕需要绝对定位*/
 .left-part .nav .nav-list ul li.last a {
     display: block;
@@ -52,4 +53,15 @@ body {
     left: 50%;
     margin-left: -16px;
     margin-top: -40px;
+}
+
+.left-part .setting p {
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+}
+
+.left-part .setting p a {
+    display: inline-block;
+    padding-right: 15px;
 }
