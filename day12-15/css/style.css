@@ -55,6 +55,7 @@ body {
     margin-top: -40px;
 }
 
+/*底部的按钮也是用绝对定位*/
 .left-part .setting p {
     position: absolute;
     left: 25px;
@@ -64,4 +65,93 @@ body {
 .left-part .setting p a {
     display: inline-block;
     padding-right: 15px;
+}
+
+/*左二*/
+/*同样是绝对定位解决自适应浏览器高度*/
+.left-part .menu-list {
+    width: 250px;
+    background-color: #222c3c;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    bottom: 0;
+}
+
+.left-part .menu-list .inner {
+    padding: 0 30px;
+}
+
+.menu-list .inner ul {
+    list-style: none;
+    padding: 17px 0;
+    border-top: 1px solid #475364;
+}
+
+.menu-list .inner ul li a {
+    text-decoration: none;
+}
+
+/*overflow，清楚浮动，因为li左右两边浮动*/
+.menu-list .inner li {
+    overflow: hidden;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+/*设置字体样式*/
+.menu-list .inner li span {
+    color: #b7c0cd;
+}
+
+.menu-list .inner li.first {
+    font-size: 12px;
+    line-height: 40px;
+}
+
+/*设置每个块第一行的字体样式*/
+.menu-list .inner li.first span.title {
+    color: #475364;
+}
+
+.menu-list .inner li .title {
+    float: left;
+}
+
+.menu-list .inner li .msg {
+    float: right;
+    line-height: 40px;
+}
+.menu-list .inner li .active{
+    color: #ffffff;
+}
+
+/*设置setting图片尽量对齐文字k*/
+.menu-list .inner li .msg img {
+    margin-top: 10px;
+}
+
+.menu-list .inner .product .pic {
+    padding-right: 14px;
+}
+
+/*goal底部固定*/
+.menu-list .inner .goal{
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+.menu-list .inner .goal ul{
+    border: none;
+}
+
+.menu-list .inner .goal ul .title{
+    padding-right: 20px;
+}
+.menu-list .inner .goal .bar{
+    display: block;
+    height: 0;
+    width: 190px;
+    border: 3px solid #2d3848;
+    border-radius: 10px;
 }
