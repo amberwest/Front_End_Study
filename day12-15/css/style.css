@@ -284,9 +284,7 @@ ul li a {
 .right-part .content .banner form {
     padding: 18px 0;
 }
-/*.right-part .content .friends .friends-list{*/
-    /*overflow: scroll;*/
-/*}*/
+
 /*好友动态列表*/
 /*用户头像/用户名、动态发表时间，使用flex布局*/
 .right-part .content .friends .friend .user {
@@ -314,6 +312,7 @@ ul li a {
 .right-part .content .friends .friend .user p.name {
     font-size: 16px;
     color: #6e737c;
+    font-weight: bold;
 }
 
 /*当前选中用户的用户名为蓝色，并有蓝色小圆点*/
@@ -338,6 +337,7 @@ ul li a {
     font-size: 14px;
     line-height: 36px;
     color: #b1b3b9;
+    font-weight: bold;
 }
 
 .right-part .content .friends .friend div.article {
