@@ -7,14 +7,37 @@ body {
     box-sizing: border-box;
 }
 
-/*自适应浏览器高度，这里使用绝对定位，还要同时使用top、bottom*/
-.left-part .nav {
-    width: 100px;
-    background-color: #1d2531;
-    position: absolute;
+/*公共类*/
+.inner_c {
+    padding: 0 30px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.db {
+    border-bottom: 1px solid #e6e9ec;
+}
+
+/*用fixed将左边固定，并用flex布局*/
+.left-part {
+    display: flex;
+    width: 350px;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
+    z-index: 4;
+}
+
+.left-part .nav {
+    width: 100px;
+    background-color: #1d2531;
 }
 
 .left-part .nav .nav-list ul {
@@ -72,10 +95,6 @@ body {
 .left-part .menu-list {
     width: 250px;
     background-color: #222c3c;
-    position: absolute;
-    top: 0;
-    left: 100px;
-    bottom: 0;
 }
 
 .left-part .menu-list .inner {
@@ -159,6 +178,11 @@ body {
     padding-right: 14px;
 }
 
+/*子绝父相，为了设置底部目标*/
+.menu-list {
+    position: relative;
+}
+
 /*goal底部固定*/
 .menu-list .inner .goal {
     position: absolute;
@@ -183,20 +207,16 @@ body {
 }
 
 /*右边*/
-/*自适应宽度*/
+/*自适应高度*/
 .right-part {
     width: calc(100% - 350px);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 350px;
+    height: 100vh;
+    margin-left: 350px;
 }
 
 .right-part .header {
-    overflow: hidden;
     height: 80px;
     border-bottom: 1px solid #e6e9ec;
-    position: relative;
 }
 
 .right-part .header .msg {
@@ -224,31 +244,27 @@ body {
     padding: 15px;
 }
 
-/*搜索框及好友列表*/
+/*使用flex设置右边内容左右布局*/
+.right-part .content {
+    display: flex;
+}
+
 .right-part .content .left {
     width: 400px;
-    height: calc(100% - 80px);
-    position: absolute;
-    top: 80px;
-    left: 0;
     border-right: 1px solid #e6e9ec;
-}
-
-.right-part .content .friends {
-    padding: 0 30px;
-}
-
-.right-part .content .banner {
-    border-bottom: 1px solid #e6e9ec;
 }
 
 /*设置输入框*/
 .right-part .content .banner input {
-    position: relative;
     width: 338px;
     height: 32px;
     border: 1px solid #e6e9ec;
     border-radius: 4px;
+}
+
+/*放大镜的父容器*/
+.right-part .content .banner {
+    position: relative;
 }
 
 /*放大镜位置*/
@@ -268,7 +284,169 @@ body {
 .right-part .content .banner form {
     padding: 18px 0;
 }
+/*.right-part .content .friends .friends-list{*/
+    /*overflow: scroll;*/
+/*}*/
+/*好友动态列表*/
+/*用户头像/用户名、动态发表时间，使用flex布局*/
+.right-part .content .friends .friend .user {
+    display: flex;
+    justify-content: space-between;
+}
 
-.right-part .content .friends .friends-list ul {
+.right-part .content .friends .friend .user .pic {
+    display: flex;
+    padding: 15px 0 10px;
+}
+
+/*头像和用户名在同个盒子下，设置margin*/
+.right-part .content .friends .friend .user div.name {
+    margin-left: 18px;
+}
+
+/*设置好友消息样式*/
+.right-part .content .friends .friend p {
+    font-size: 14px;
+    color: #b1b3b9;
+}
+
+/*没有被选中的用户名为深灰色*/
+.right-part .content .friends .friend .user p.name {
+    font-size: 16px;
+    color: #6e737c;
+}
+
+/*当前选中用户的用户名为蓝色，并有蓝色小圆点*/
+.right-part .content .friends .friend .user p.active {
+    font-size: 16px;
+    color: #00aaff;
+}
+
+/*设置蓝色小圆点*/
+.right-part .content .friends .friend .user p.active span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background-color: #00aaff;
+}
+
+/*日期字体*/
+.right-part .content .friends .friend .user .date {
+    padding-top: 15px;
+    font-size: 14px;
+    line-height: 36px;
+    color: #b1b3b9;
+}
+
+.right-part .content .friends .friend div.article {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+/*设置消息提示数背景*/
+.right-part .content .friends .friend .num {
+    color: white;
+    width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: #00aaff;
+}
+
+/*右边第二列*/
+.right-part .content .chat {
+    flex: 1;
+}
+
+.right-part .content .chat .history {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e9ec;
+}
+
+/*所有的名字颜色一致*/
+.right-part .content .chat .name {
+    color: #585d68;
+}
+
+.right-part .content .chat .history span {
+    display: inline-block;
+}
+
+.right-part .content .chat .history .friend {
+    line-height: 70px;
+}
+
+.right-part .content .chat .history .friend .dot {
+    margin-left: 8px;
+    width: 5px;
+    height: 5px;
+    background-color: #1bb934;
+    border-radius: 50%;
+    /*微调小绿点位置*/
+    position: relative;
+    top: -2px;
+    left: 0;
+}
+
+.right-part .content .chat .history .group {
+    display: flex;
+    overflow: hidden;
+    line-height: 70px;
+    color: #ccd1dc;
+}
+
+.right-part .content .chat .history .group ul {
+    padding-top: 20px;
+}
+
+.right-part .content .chat .history .group ul li {
     list-style: none;
+    float: left;
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #e6e9ec;
+}
+
+/*设置整个按钮框都是可以点击的*/
+.right-part .content .chat .history .group ul li a {
+    display: block;
+    width: 35px;
+    height: 30px;
+    padding-top: 25%;
+}
+
+/*设置按钮边框*/
+.right-part .content .chat .history .group ul li.first {
+    border-radius: 4px 0 0 4px;
+}
+
+.right-part .content .chat .history .group ul li.last {
+    border-radius: 0 4px 4px 0;
+}
+
+.right-part .content .chat .history .group ul li.middle {
+    border-right: none;
+    border-left: none;
+}
+
+.right-part .content .chat .history .group .page li.first {
+    border-right: none;
+}
+
+/*竖线*/
+.right-part .content .chat .group .sx {
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: 0 1px;
+    background-color: #ccd1dc;
+}
+
+.right-part .content .chat .group div {
+    margin-right: 30px;
 }
