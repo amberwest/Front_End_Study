@@ -23,7 +23,12 @@ ul li a {
 .db {
     border-bottom: 1px solid #e6e9ec;
 }
-
+.bt{
+    border-top: 1px solid #e6e9ec;
+}
+.new-bt{
+    border-top: 1px solid #40a7f3;
+}
 /*用fixed将左边固定，并用flex布局*/
 .left-part {
     display: flex;
@@ -303,13 +308,13 @@ ul li a {
 }
 
 /*设置好友消息样式*/
-.right-part .content .friends .friend p {
+.right-part p {
     font-size: 14px;
-    color: #b1b3b9;
+    color: #a6a9ae;
 }
 
-/*没有被选中的用户名为深灰色*/
-.right-part .content .friends .friend .user p.name {
+/*没有被选中的用户名为深灰色，跟右边的聊天栏用户名一样*/
+.right-part .content .friends .friend .user p.name, .right-part .chat-list .info span.name {
     font-size: 16px;
     color: #6e737c;
     font-weight: bold;
@@ -331,8 +336,8 @@ ul li a {
     background-color: #00aaff;
 }
 
-/*日期字体*/
-.right-part .content .friends .friend .user .date {
+/*日期字体样式，右边聊天栏也是一样*/
+.right-part .date {
     padding-top: 15px;
     font-size: 14px;
     line-height: 36px;
@@ -356,30 +361,33 @@ ul li a {
     background-color: #00aaff;
 }
 
-/*右边第二列*/
+/*右边第二列，自适应宽度*/
 .right-part .content .chat {
     flex: 1;
 }
 
+/*当前聊天对象信息栏*/
 .right-part .content .chat .history {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e6e9ec;
 }
 
-/*所有的名字颜色一致*/
-.right-part .content .chat .name {
+/*聊天对象名字样式*/
+.right-part .content .chat .history .chat-name {
+    font-size: 18px;
     color: #585d68;
 }
 
 .right-part .content .chat .history span {
     display: inline-block;
-}
-
-.right-part .content .chat .history .friend {
     line-height: 70px;
 }
 
+/*.right-part .content .chat .history .friend {*/
+/*line-height: 70px;*/
+/*}*/
+/*制作小绿点*/
 .right-part .content .chat .history .friend .dot {
     margin-left: 8px;
     width: 5px;
@@ -392,11 +400,16 @@ ul li a {
     left: 0;
 }
 
+/*操作区*/
 .right-part .content .chat .history .group {
     display: flex;
     overflow: hidden;
     line-height: 70px;
     color: #ccd1dc;
+}
+
+.right-part .content .chat .group div {
+    margin-right: 30px;
 }
 
 .right-part .content .chat .history .group ul {
@@ -447,6 +460,40 @@ ul li a {
     background-color: #ccd1dc;
 }
 
-.right-part .content .chat .group div {
-    margin-right: 30px;
+/*右边第二栏*/
+.right-part .chat-list ul li{
+    position: relative;
+    padding-top: 25px;
 }
+.right-part .chat-list .info>div{
+    display: flex;
+    padding-bottom: 25px;
+}
+.right-part .chat-list .info .pic{
+    margin: 10px 20px 0 0;
+}
+/*评论图片*/
+.right-part .chat-list .info span.pic{
+    display: inline-block;
+    margin: 20px 10px 0 0;
+}
+/*用户名和时间间距*/
+.right-part .chat-list .info .msg .name {
+    padding-right: 10px;
+}
+/*设置聊天记录时间线*/
+.right-part .chat-list .time-line{
+    font-size: 14px;
+    line-height: 19px;
+    color: #a1adbc;
+    padding: 0 15px;
+    background-color: white;
+    position: absolute;
+    top: -10px;
+    left: 40%;
+}
+
+.right-part .chat-list .time-line.new{
+    color: #40a7f3;
+}
+
