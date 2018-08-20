@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://localhost:63342/Front_End_Study/day16/index.html?_ijt=4or9chfahl0pf0qsqrueu5q5cd -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>day16</title>
+    <style type="text/css">
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        body {
+            margin: 100px;
+        }
+
+        .cal {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Demo</h1>
+<p id="content-wrapper">who are you?</p>
+<input type="text" id="name-input" placeholder="input your name">
+<button id="send-btn">send</button>
+<div class="cal">
+    <input type="number" id="first-number" value="0" placeholder="input the first number">
+    <input type="number" id="second-number" value="0" placeholder="input the second number">
+    <button id="add-btn">add</button>
+    <button id="minus-btn">minus</button>
+    <button id="times-btn">times</button>
+    <button id="divide-btn">divide</button>
+    <p id="result">2</p>
+</div>
+<script>
+    document.getElementById("send-btn").onclick = function () {
+        document.getElementById("content-wrapper").innerHTML = "Hello " + document.getElementById("name-input").value;
+    };
+
+    document.getElementById("add-btn").onclick = function () {
+        var a = document.getElementById("first-number").value;
+        var b = document.getElementById("second-number").value;
+        document.getElementById("result").innerHTML = parseFloat(a) + parseFloat(b);
+    };
+
+    document.getElementById("minus-btn").onclick = function () {
+        var a = document.getElementById("first-number").value;
+        var b = document.getElementById("second-number").value;
+        document.getElementById("result").innerHTML = parseFloat(a) - parseFloat(b);
+    };
+     document.getElementById("times-btn").onclick = function () {
+        var a = document.getElementById("first-number").value;
+        var b = document.getElementById("second-number").value;
+        document.getElementById("result").innerHTML = parseFloat(a) * parseFloat(b);
+    };
+      document.getElementById("divide-btn").onclick = function () {
+        var a = document.getElementById("first-number").value;
+        var b = document.getElementById("second-number").value;
+        document.getElementById("result").innerHTML = parseFloat(a) / parseFloat(b);
+    };
+
+</script>
+
+</body></html>
