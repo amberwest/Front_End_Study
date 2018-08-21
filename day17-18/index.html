@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day16</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        div {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Demo</h1>
+<div class="cal">
+    <input type="number" id="first-number" value="0" placeholder="input the first number">
+    <input type="number" id="second-number" value="0" placeholder="input the second number">
+    <button id="add-btn">add</button>
+    <button id="minus-btn">minus</button>
+    <button id="times-btn">times</button>
+    <button id="divide-btn">divide</button>
+    <p id="result">result : </p>
+</div>
+<div class="transform">
+    <input type="number" id="dec-number" placeholder="输入一个十进制非负整数">
+    <input type="number" id="bin-bit" placeholder="输入妆后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="res">result:&nbsp;&nbsp;</p>
+</div>
+<script>
+    // 获取各个变量
+    function getNumber() {
+        var a = document.getElementById("first-number").value;
+        var b = document.getElementById("second-number").value;
+        var c = document.getElementById("dec-number").value;
+        var d = document.getElementById("bin-bit").value;
+        return {a1: a, b1: b, c1: c, d1: d}
+    }
+
+    //将十进制转为二进制
+    function dec2bin(decNumber, binBit) {
+        if (decNumber >= 0) {
+            var result;
+            //方法一:使用既成的方法
+            // result = decNumber.toString(2);
+            // return result.padStart(binBit, '0')
+            //方法二:
+            var arr = [];  //存放余数
+            var b = 0;   // 暂时存放余数
+            for (var i = 0; ; i++) {
+                if (decNumber == 0) {
+                    break;
+                } else {
+                    b = decNumber % 2;
+                    c = parseInt(decNumber / 2);  //商取整
+                    decNumber = c;   //交换被除数
+                    arr.push(b);
+                }
+            }
+            //得到转化后的二进制数
+            result = arr.reverse().join("").toString(2);
+
+            //转化后二进制位数处理
+            if (result.length < parseInt(binBit)) {
+                var s = '';
+                var i = parseInt(binBit) - result.length;
+                for (j = 0; j < i; j++) {
+                    s += '0'
+                }
+                return s+result
+            } else {
+                console.info("bin-bit位数小于二进制本身位数");
+                return result
+            }
+        } else {
+            console.log("输入的数值必须是非负整数");
+            return false
+        }
+    }
+
+    // 十进制
+    document.getElementById("trans-btn").onclick = function () {
+        var nums = getNumber();
+        var num = parseInt(nums['c1']);
+        var bin = parseInt(nums['d1']);
+        var res = dec2bin(num, bin);
+        if (res) {
+            document.getElementById("res").innerHTML = res;
+        } else {
+            document.getElementById("res").innerText = "没有结果";
+        }
+    };
+
+    // 加减乘除
+    document.getElementById("add-btn").onclick = function () {
+        var res = getNumber();
+        var a = res['a1'];
+        var b = res['b1'];
+        document.getElementById("result").innerHTML = parseFloat(a) + parseFloat(b);
+    };
+
+    document.getElementById("minus-btn").onclick = function () {
+        var res = getNumber();
+        var a = res['a1'];
+        var b = res['b1'];
+        document.getElementById("result").innerHTML = parseFloat(a) - parseFloat(b);
+    };
+    document.getElementById("times-btn").onclick = function () {
+        var res = getNumber();
+        var a = res['a1'];
+        var b = res['b1'];
+        document.getElementById("result").innerHTML = parseFloat(a) * parseFloat(b);
+    };
+    document.getElementById("divide-btn").onclick = function () {
+        var res = getNumber();
+        var a = res['a1'];
+        var b = res['b1'];
+        //除数不能为0
+        if (b != 0) {
+            document.getElementById("result").innerHTML = parseFloat(a) / parseFloat(b);
+        } else {
+            console.info("除数不能为0");
+        }
+    };
+
+</script>
+</body>
+</html>

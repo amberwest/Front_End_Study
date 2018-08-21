@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>第三天：让简历有点色彩</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         </div>
         <div class="pic">
             <img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534767693486&di=e14e4fc605475c87803e5c32773bc298&imgtype=0&src=http%3A%2F%2Fp.66460.com%2Fcms%2F1310%2F201310081634332598.jpg'
-            alt="tina from bob's burgers" height=120px width=100px>
+                 alt="tina from bob's burgers" height=120px width=100px>
         </div>
     </div>
     <div class="cl"></div>
@@ -109,6 +110,15 @@
     document.getElementById("me").onclick = function () {
         document.getElementById("result").innerText = "I love Bob's Burgers, it's a hilarious cartoon.";
     };
+
+    $(document).ready(function () {
+        var myTime = new Date().getHours();
+        if (myTime < 10){
+            alert("早上好")
+        }else if(myTime > 19 && myTime < 24){
+            alert("晚上好")
+        }
+    })
 </script>
 </body>
 </html>
