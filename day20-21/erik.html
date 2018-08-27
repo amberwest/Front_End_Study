@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         #erik {
             width: 480px;
             height: 480px;
@@ -13,7 +18,7 @@
     <script>
         window.onload = function () {
             var url = 'erik_ce204002.jpg';
-            var positions = [0, -480, -960, -1440, -1920, -2400, -2880, -3360, -3840, -4320, -4800, -5280, -5760, -6240, -6720, -7200, -7680, -8160]
+            var positions = [-480, -960, -1440, -1920, -2400, -2880, -3360, -3840, -4320, -4800, -5280, -5760, -6240, -6720, -7200, -7680];
             var erik = document.getElementById('erik');
             var oBtn = document.getElementById('btn');
             var timer = null;
@@ -30,17 +35,23 @@
             function frameAnimation(ele, positions, url) {
                 ele.style.backgroundImage = 'url(' + url + ')';
                 ele.style.backgroundRepeat = 'no-repeat';
+
                 var index = 0;
+                var tmp = positions.length-1;
 
                 function run() {
                     ele.style.backgroundPosition = '0' + positions[index] + 'px';
                     index++;
-                    if (index >= positions.length) {
+                    if (index >= positions.length && tmp >= 0) {
+                        ele.style.backgroundPosition = '0' + positions[tmp] + 'px';
+                        tmp--;
+                    }
+                    else if (index > positions.length && tmp < 0) {
                         index = 0;
+                        tmp = positions.length-1;
                     }
                     timer = setTimeout(run, 80);
                 }
-
                 run()
             }
 
@@ -49,6 +60,6 @@
 </head>
 <body>
 <div id="erik"></div>
-<input type="button" id="btn" value="暂停运动">
+<input type="button" id="btn" value="开始运动">
 </body>
 </html>
