@@ -37,21 +37,23 @@
                 ele.style.backgroundRepeat = 'no-repeat';
 
                 var index = 0;
-                var tmp = positions.length-1;
+                var tmp = positions.length - 1;
 
                 function run() {
                     ele.style.backgroundPosition = '0' + positions[index] + 'px';
                     index++;
+                    //往回走
                     if (index >= positions.length && tmp >= 0) {
                         ele.style.backgroundPosition = '0' + positions[tmp] + 'px';
                         tmp--;
                     }
                     else if (index > positions.length && tmp < 0) {
                         index = 0;
-                        tmp = positions.length-1;
+                        tmp = positions.length - 1;
                     }
                     timer = setTimeout(run, 80);
                 }
+
                 run()
             }
 
