@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day20</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('fade-btn');
+            var oDiv = document.getElementById('fade-obj');
+
+            oBtn.onclick = function () {
+                var txt = oBtn.innerHTML;
+                //setInterval
+                // startMove(oBtn, oDiv, txt);
+                //setTimeout
+                startMoveTimeOut(oBtn, oDiv, txt);
+            }
+        };
+
+        function startMove(obtn, odiv, txt) {
+            var count = 0;
+            var timer = setInterval(function () {
+                obtn.disabled = true;
+                if (count == 100) {
+                    obtn.innerHTML = txt === '淡出' ? '淡入' : '淡出';
+                    obtn.disabled = false;
+                    clearInterval(timer)
+                }
+                else {
+                    odiv.style.opacity = txt === '淡出' ? 1 - 0.01 * count : 0.01 * count;
+                    count++
+                }
+            }, 30)
+        }
+
+        function startMoveTimeOut(obtn, odiv, txt) {
+            function changeOpacity(i) {
+                console.log(i);
+                setTimeout(function () {
+                    odiv.style.opacity = txt === '淡出' ? 1 - 0.01 * i : 0.01 * i;
+                }, i * 30)
+            }
+
+            obtn.disabled = true;
+            for (var i = 0; i <= 100; i++) {
+                console.log('----'+i);
+                changeOpacity(i);
+            }
+            obtn.innerHTML = txt === '淡出' ? '淡入' : '淡出';
+            obtn.disabled = false;
+        }
+    </script>
+</head>
+<body>
+<div id="fade-obj" style="width:300px;height:300px;background:#000;"></div>
+<button id="fade-btn">淡出</button>
+</body>
+</html>

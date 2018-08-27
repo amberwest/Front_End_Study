@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day20-21</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('submit-btn');
+            var sName = document.getElementById('name');
+            oBtn.onclick = function () {
+                console.log(sName.value);
+            };
+            // //查看按键code
+            // document.addEventListener('keydown', function (ev) {
+            //     console.log(ev.which);
+            // });
+            sName.onkeydown = function (e) {
+                var ev = ev || window.event;
+                if (ev.which == 13) {
+                    console.log(sName.value);
+                } else if (ev.keyCode == 27) {
+                    sName.value = '';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="name">
+<button id="submit-btn">Submit</button>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+    <style>
+        select {
+            display: none;
+        }
+
+        .checked {
+            display: block;
+        }
+
+        .unchecked {
+            display: none;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var oS = document.getElementById('school');
+            var oC = document.getElementById('company');
+            var c = document.getElementById('company-select');
+            var s = document.getElementById('school-select');
+            oS.onclick = function () {
+                if (oS.checked) {
+                    s.className = 'checked';
+                    c.className = 'unchecked';
+                }
+            };
+            oC.onclick = function () {
+                if (oC.checked) {
+                    s.className = 'unchecked';
+                    c.className = 'checked';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<label>
+    <input id="school" name="status" type="radio">
+    School
+</label>
+<label>
+    <input id="company" name="status" type="radio">
+    Company
+</label>
+
+<select id="school-select">
+    <option>北京邮电大学</option>
+    <option>黑龙江大学</option>
+    <option>华中科技大学</option>
+</select>
+
+<select id="company-select">
+    <option>百度</option>
+    <option>爱奇艺</option>
+</select>
+</body>
+</html>
