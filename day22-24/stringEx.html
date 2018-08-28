@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oRa = document.getElementById('radio-a');
+            var oRb = document.getElementById('radio-b');
+            var sTa = document.getElementById('str-a');
+            var sTb = document.getElementById('str-b');
+            var a = document.getElementById('num-a');
+            var b = document.getElementById('num-b');
+            var aBtn = document.getElementsByTagName('button');
+            var res = document.getElementById('result');
+            aBtn[0].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.length;
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.length;
+                }
+            };
+            aBtn[1].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.charAt(3);
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.charAt(3);
+                }
+            };
+            aBtn[2].onclick = function () {
+                res.innerHTML = sTa.value.concat(sTb.value);
+            };
+            aBtn[3].onclick = function () {
+                res.innerHTML = sTa.value.indexOf(sTb.value);
+            };
+            aBtn[4].onclick = function () {
+                res.innerHTML = sTb.value.lastIndexOf(sTa.value);
+            };
+            aBtn[5].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.slice(parseInt(a.value), parseInt(b.value));
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.slice(parseInt(a.value), parseInt(b.value));
+                }
+            };
+            aBtn[6].onclick = function () {
+                if (oRa.checked) {
+                    var txt = sTa.value.split('\n');
+                    res.innerHTML = txt.length;
+                } else if (oRb.checked) {
+                    var txt = sTb.value.split('\n');
+                    res.innerHTML = txt.length;
+                }
+            };
+            aBtn[7].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.substr(parseInt(a.value), parseInt(b.value));
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.substr(parseInt(a.value), parseInt(b.value));
+                }
+            };
+            aBtn[8].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.toUpperCase();
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.toUpperCase();
+                }
+            };
+            aBtn[9].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.toLowerCase();
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.toLowerCase();
+                }
+            };
+            aBtn[10].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.replace(/\s+/g, '');
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.replace(/\s+/g, '');
+                }
+            };
+            aBtn[11].onclick = function () {
+                if (oRa.checked) {
+                    res.innerHTML = sTa.value.replace('a', sTb.value);
+                } else if (oRb.checked) {
+                    res.innerHTML = sTb.value.replace('a', sTa.value);
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button>获取当前选中输入的内容长度</button>
+    <button>当前选中输入中的第3个字符</button>
+    <button>把两个输入框的文字连接在一起输出（concat）</button>
+    <button>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button>当前选中输入框的行数</button>
+    <button>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button>把所选输入框中的内容全部转为大写</button>
+    <button>把所选输入框中的内容全部转为小写</button>
+    <button>把所选输入框中内容的半角空格全部去除</button>
+    <button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+</body>
+</html>

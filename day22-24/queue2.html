@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="queue-input" type="text">
+<p id="queue-cont">队列内容：apple-&gt;pear</p>
+<button id="in-btn">入队</button>
+<button id="out-btn">出队</button>
+<button id="font-btn">打印队头元素内容</button>
+<button id="empty-btn">判断队列是否为空</button>
+
+<script>
+
+    var queue = ["apple", "pear"];
+    var iBtn = document.getElementById('in-btn');
+    var oBtn = document.getElementById('out-btn');
+    var fBtn = document.getElementById('font-btn');
+    var eBtn = document.getElementById('empty-btn');
+    var p = document.getElementById('queue-cont');
+    var Oin = document.getElementById('queue-input');
+    var reQueue = queue.reverse();
+    iBtn.onclick = function () {
+        reQueue.push(Oin.value);
+        console.log(queue);
+        Oin.value = '';
+        p.innerHTML = '队列内容：' + reQueue.join('&lt;-');
+    };
+    //出队是删除队头元素
+    oBtn.onclick = function () {
+        if (!queue.empty) {
+            reQueue.shift();
+            console.log(queue);
+            p.innerHTML = '队列内容：' + reQueue.join('&lt;-');
+        } else {
+            alert('队列已经空了')
+        }
+    };
+    fBtn.onclick = function () {
+        if (!reQueue.empty) {
+            p.innerHTML = '队头元素：' + reQueue[0];
+        } else {
+            p.innerHTML = '队列已空'
+        }
+    };
+    eBtn.onclick = function () {
+        if (reQueue.empty) {
+            p.innerHTML = '队列已空'
+        } else {
+            p.innerHTML = '队列不为空';
+            p.innerHTML = '队列内容：' + reQueue.join('&lt;-');
+        }
+    }
+</script>
+</body>
+</html>
