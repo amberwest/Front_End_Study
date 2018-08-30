@@ -58,32 +58,51 @@
             }
         }
     };
-    console.log(Object.keys(tree));
 
-    // 假设id和name均不会重复，根据输入name找到对应的id
-    function findIdByName(name) {
-
+    function loopObject(object, argu) {
+        for (var key in object) {
+            var value = object[key];
+            if (typeof value === 'object') {
+                if (value.name == argu) {
+                    return value.id;
+                } else if (value.id == argu) {
+                    return value.name;
+                } else {
+                    loopObject(value, argu)
+                }
+            } else if (value == argu) {
+                return value;
+            }
+        }
     }
 
-    // 假设id和name均不会重复，根据输入id找到对应的name
-    function findNameById(id) {
+    var s=loopObject(tree, 'Carl');
+    console.log(s);
 
-    }
-
-    // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
-    function getListWithDLR() {
-
-    }
-
-    // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
-    function getListWithLDR() {
-
-    }
-
-    // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
-    function getListWithLRD() {
-
-    }
+    // // 假设id和name均不会重复，根据输入name找到对应的id
+    // function findIdByName(name) {
+    //
+    // }
+    //
+    // // 假设id和name均不会重复，根据输入id找到对应的name
+    // function findNameById(id) {
+    //
+    // }
+    //
+    // // 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+    // function getListWithDLR() {
+    //
+    // }
+    //
+    // // 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+    // function getListWithLDR() {
+    //
+    // }
+    //
+    // // 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+    // function getListWithLRD() {
+    //
+    // }
 </script>
 </body>
 </html>
