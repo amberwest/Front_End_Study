@@ -68,10 +68,10 @@
 
         function find(object) {
             if (object != null) {
-                if (object.name == argu) {
+                if (object.name === argu) {
                     // res.push( object.id);
                     res = object.id;
-                } else if (object.id == argu) {
+                } else if (object.id === parseInt(argu)) {
                     // res.push( object.name);
                     res = object.name;
                 } else {
@@ -143,6 +143,7 @@
     getListWithLDR();
     getListWithDLR();
     getListWithLRD();
+
 
 </script>
 </body>
