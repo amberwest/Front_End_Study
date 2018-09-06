@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 132px;
+        }
+
+        li {
+            height: 20px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+    <input id="email-input" type="text">
+    <ul id="email-sug-wrapper" class="email-sug"></ul>
+</div>
+<script>
+    var oIn = document.getElementById('email-input');
+    var oUl = document.getElementById('email-sug-wrapper');
+    var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+    var currentId = 0, aLi = [];
+    focusEvent();
+    oIn.oninput = function () {
+        var input = getInput(oIn);
+        var list = createLi(input);
+        addLi(list);
+        showHide(input, oUl);
+    };
+
+    function getInput(obj) {
+        //获取obj文本并去除首尾空格,对输入文本进行html转码
+        var value = obj.value.trim();
+        value = value.replace(/&/g, "&amp;");
+        value = value.replace(/</g, "&lt;");
+        value = value.replace(/>/g, "&gt;");
+        value = value.replace(/ /g, "&nbsp;");
+        value = value.replace(/"/g, '&quot;');
+        return value;
+    }
+
+    function createLi(con) {
+        //根据用户输入生成提示框中的提示内容
+        var tempPostfixList = postfixList.slice(),
+            index = con.indexOf('@'),
+            postfix = '',
+            newPostfixList = [];
+        if (index !== -1) {//有@
+            var tempCon = con.slice();  //复制输入内容
+            con = tempCon.slice(0, index);    //@之前的内容
+            postfix = tempCon.slice(index + 1);     //@之后的内容
+            for (var i = 0; i < tempPostfixList.length; i++) {  //选择@后缀相同的邮箱
+                if (tempPostfixList[i].slice(0, postfix.length) === postfix && postfix) {
+                    newPostfixList.push(tempPostfixList[i]);
+                }
+            }
+            if (newPostfixList.length === 0) {  //不匹配，则全部保留
+                newPostfixList = tempPostfixList;
+            }
+        } else {  //如果输入中没有@字符,则保留全部
+            newPostfixList = tempPostfixList;
+        }
+        for (var j = 0; j < newPostfixList.length; j++) {   //添加上邮箱
+            newPostfixList[j] = con + '@' + newPostfixList[j]
+        }
+        return newPostfixList;
+    }
+
+    function addLi(list) {
+        //添加li到列表中
+        var a = '';
+        for (var j = 0; j < list.length; j++) {
+            a += '<li>' + list[j] + '</li>'
+            // var li = document.createElement('li');
+            // li.innerHTML = list[j];
+            // obj.appendChild(li);
+        }
+        oUl.innerHTML = a;
+    }
+
+    //添加监听事件，如果li被选中，则将li的内容写入到输入框，并将提示框隐藏
+    oUl.addEventListener('click', clickEvent);
+
+    function clickEvent(e) {
+        var value = e.target.innerText;
+        //用正则表达式实现html转码
+        value = value.replace(/&amp;/g, "&");
+        value = value.replace(/&lt;/g, "<");
+        value = value.replace(/&gt;/g, ">");
+        value = value.replace(/&nbsp;/g, " ");
+        value = value.replace(/\'/g, "'");
+        value = value.replace(/\"/g, '"');
+        oIn.value = value;
+        ulHide(oUl);    //因此提示框
+        focusEvent();
+    }
+
+    function showHide(con, obj) {
+        //显示/隐藏
+        if (con == "") {
+            ulHide(obj);
+        } else {
+            ulShow(obj);
+        }
+    }
+
+    function ulHide(obj) {
+        obj.style.display = 'none';
+    }
+
+    function ulShow(obj) {
+        obj.style.display = 'block';
+    }
+
+    //根据currentId来设置li的背景色
+    function keyStyle() {
+        aLi = document.getElementsByTagName('li');
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.backgroundColor = 'white';
+        }
+        aLi[currentId].style.backgroundColor = 'pink'
+    }
+
+    oIn.addEventListener('keydown', keyEvent);
+
+    function keyEvent(e) {
+        var content = document.getElementsByTagName('li');
+        var index = postfixList.length;
+        if (e.keyCode === 40) { //向下
+            if (currentId === index - 1) {  //如果按键之前的被选择提示是最后一个，则被选状态移到第一个
+                currentId = 0;
+            } else {
+                currentId += 1;
+            }
+            keyStyle();
+            e.preventDefault(); // 取消事件的默认动作
+        } else if (e.keyCode === 38) { //向上
+            //如果按键之前的被选择提示是第一个，则被选状态移到最下面一个
+            if (currentId === 0) {
+                currentId = index - 1;
+            } else {
+                currentId -= 1;
+            }
+            keyStyle();
+            e.preventDefault();
+        } else if (e.keyCode === 13) {  //enter
+            oIn.value = content[currentId].innerText;
+            ulHide(oUl);
+            focusEvent();
+        } else if (e.keyCode === 27) {   //esc
+            oIn.select();
+        }
+    }
+
+    //焦点事件
+    function focusEvent() {
+        oIn.focus();
+    }
+
+    //鼠标划过样式
+    oUl.addEventListener('mouseover', mouseoverStyle);
+
+    function mouseoverStyle(e) {
+        var aLi = document.getElementsByTagName('li');
+        for (var i = 0; i < aLi.length; i++) {
+            item.style.backgroundColor = 'white';
+        }
+        e.target.style.backgroundColor = 'skyblue';
+    }
+</script>
+</body>
+</html>
